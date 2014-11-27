@@ -30,7 +30,7 @@ And the make will compile and install the Freshplayer-installer
 
 ###DEPENDENCIES:
 
-Sinces it's just a simple Ansi C script, it has no especial compiling needs, but to work it needs wget and unzip installed, which usually are installed by default, and it has obviously the same dependencies that freshplayerplugin has:
+Sinces it's just a simple Ansi C script, it has no especial compiling needs, but to work it needs wget and unzip installed, which usually are installed by default, and it has obviously needs the same dependencies that freshplayerplugin to compile the freshplayerplugin, because magic doesn't really exist (yeah, face that truth!!!):
 
 > $ sudo apt-get install wget unzip cmake pkg-config ragel libasound2-dev libglib2.0-dev libconfig-dev libpango1.0-dev libegl1-mesa-dev libevent-dev libgtk+2.0-dev libgles2-mesa-dev
 
