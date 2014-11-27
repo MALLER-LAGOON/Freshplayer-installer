@@ -16,6 +16,11 @@ It's as simple as typing:
 
 it no needs ROOT privileges, and it installs the freshplayerplugin to the current user that do the calls.
 
+>$ freshplayer uninstall
+
+obviously uninstalls the freshplayer on the current user.
+
+
 ###INSTALLING FRESHPLAYER-INSTALLER:
 
 To the Rookies, the folder Deb-packages have the .deb packages to install the software directly with Gdebi or dpkg according your preference.
