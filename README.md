@@ -1,12 +1,11 @@
-#FRESHPLAYER-INSTALLER
-======================
+##FRESHPLAYER-INSTALLER
+
 
 Freshplayer-installer is a simple C script that manages the download, compiling and install of I-Rinat Freshplayerplugin from its official GitHub repository.
 
 It has nothing special, and the script it's just A WAY REALLY BASIC, but it do his thing.
 
-USAGE:
-=====
+###USAGE:
 
 It's as simple as typing:
 
@@ -14,17 +13,19 @@ It's as simple as typing:
 
 it no needs ROOT privileges, and it installs the freshplayerplugin to the current user that do the calls.
 
-INSTALLING FRESHPLAYER-INSTALLER:
-================================
+###INSTALLING FRESHPLAYER-INSTALLER:
 
-It's as simple as typing
+To the Rookies, the folder Deb-packages have the .deb packages to install the software directly with Gdebi or dpkg according your preference.
+
+
+
+but, if u want to install it directly from the source code. It's as simple as typing:
 
 >$ sudo make all
 
 And the make will compile and install the Freshplayer-installer
 
-DEPENDENCIES:
-============
+###DEPENDENCIES:
 
 Sinces it's just a simple Ansi C script, it has no compiling functionalities, but to work it needs wget and unzip installed, which usually are installed by default, and it has obviously the same dependencies that freshplayerplugin has:
 
@@ -32,4 +33,4 @@ Sinces it's just a simple Ansi C script, it has no compiling functionalities, bu
 
 On Debian the package <code>libgtk+2.0-dev</code> is called <code>libgtk2.0-dev</code>, but usually the apt-get performs the package approval by it self.
 
-THIS IS JUST TO HELP YOU TO MANAGE THE DOWNLOAD AND INSTALL THE LAST FRESHPLAYER AVAILABLE, ON YOUR SYSTEM, FRESHPLAYER-INSTALLER IS NOT AN UPDATE SEEKER.
+<code>THIS IS JUST TO HELP YOU TO MANAGE THE DOWNLOAD AND INSTALL THE LAST FRESHPLAYER AVAILABLE, ON YOUR SYSTEM, FRESHPLAYER-INSTALLER IS NOT AN UPDATE SEEKER.</code>
