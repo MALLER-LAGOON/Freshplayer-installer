@@ -40,4 +40,4 @@ On Debian the package <code>libgtk+2.0-dev</code> is called <code>libgtk2.0-dev<
 
 ###THANKS TO:
 
-I-Rinat, your freshplayerplugin is a bless, i'm just one of a thousands fans of your job. and like i said before: <code>#YOUR ARE THE BEST!!!</code>
+I-Rinat, your freshplayerplugin is a bless, i'm just one of a thousands fans of your job. and like i said before: #<code>YOUR ARE THE BEST!!!</code>
