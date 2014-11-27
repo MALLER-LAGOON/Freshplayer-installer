@@ -31,7 +31,7 @@ int main(int argc,char* argv[])
 
 	if(argc==1)
 	{
-		printf("\n\t\t\x1b[1;31mNo colocaste la instruccion\x1b[0;0m\n\n");
+		printf("\n\t\t\x1b[1;31mfreshplayer-installer argument is missing, try with \"freshplayer install\"\x1b[0;0m\n\n");
 		return(0);
 	}
 	else

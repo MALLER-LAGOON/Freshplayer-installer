@@ -1,9 +1,9 @@
 ##FRESHPLAYER-INSTALLER
 
 
-Freshplayer-installer is a simple C script that manages the download, compiling and install of I-Rinat Freshplayerplugin from its official GitHub repository.
+Freshplayer-installer is a simple C script that manages the download, compiling and install of I-Rinat's Freshplayerplugin from it's official GitHub repository.
 
-It has nothing special, and the script it's just A WAY REALLY BASIC, and it do his thing.
+It has nothing special, this script it's just A HELL REALLY BASIC ALMOST BEGINNERS LEVEL, but finally do his thing.
 
 This was done because of the laziness of cloning/download & unzip and compile the project every time to install and/or upgrade, performing a script to do everything for me in one call. This liked to a friend of mine who test it, and he suggested me that upload it somewhere, because he found it very good, and voilá.
 
