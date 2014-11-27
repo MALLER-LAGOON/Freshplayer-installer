@@ -27,7 +27,9 @@
 
 int main(int argc,char* argv[])
 {
-	char update[]="cd ~ && mkdir freshplayerplugin && cd freshplayerplugin && wget https://codeload.github.com/i-rinat/freshplayerplugin/zip/master && unzip master && cd freshplayerplugin-master && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .. && make && cp -f libfreshwrapper-pepperflash.so ~/.mozilla/plugins/libfreshwrapper-pepperflash.so && cp -f libfreshwrapper-pepperflash.so ~/freshplayerplugin/libfreshwrapper-pepperflash.so && cd .. && cd .. && cd .. && rm -R freshplayerplugin/";
+	char install[]="cd ~ && mkdir freshplayerplugin && cd freshplayerplugin && wget https://codeload.github.com/i-rinat/freshplayerplugin/zip/master && unzip master && cd freshplayerplugin-master && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .. && make && cp -f libfreshwrapper-pepperflash.so ~/.mozilla/plugins/libfreshwrapper-pepperflash.so && cp -f libfreshwrapper-pepperflash.so ~/freshplayerplugin/libfreshwrapper-pepperflash.so && cd .. && cd .. && cd .. && rm -R freshplayerplugin/";
+	char uninstall[]="rm -f ~/.mozilla/plugins/libfreshwrapper-pepperflash.so";
+	char install_flash[]="apt-get install flashplugin-nonfree";
 
 	if(argc==1)
 	{
@@ -38,12 +40,23 @@ int main(int argc,char* argv[])
 	{
 		if(strcmp("install",argv[1])==0)
 		{
-			system(update);
+			system(install);
+			return 0;
+		}
+		else if(strcmp("uninstall",argv[1])==0)
+		{
+			system(uninstall);
+			printf("\n\n\t\t\x1b[1;32mFreshplayerplugin was successfully removed\x1b[0;0m\n\n");
+			if(getuid()!=0)
+			{
+				system(install_flash);
+				return 0;
+			}
 			return 0;
 		}
 		else
 		{
-			printf("\n\t\t\x1b[1;31mThe argument entered IS NOT VALID\x1b[0;0m\n\n");
+			printf("\n\t\t\x1b[1;33mThe argument entered \x1b[1;31mIS NOT VALID\n\t\t\t\x1b[1;33mtry with \"freshplayer install\"\x1b[0;0m\n\n");
 			return 0;
 		}
 	}
