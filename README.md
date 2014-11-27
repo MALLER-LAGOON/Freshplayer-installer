@@ -1,7 +1,7 @@
 ##FRESHPLAYER-INSTALLER
 
 
-Freshplayer-installer is a simple C script that manages the download, compiling and install of I-Rinat's Freshplayerplugin from it's official GitHub repository.
+Freshplayer-installer is a simple C script that manages the download, compiling and install of I-Rinat's Freshplayerplugin from it's [Official GitHub repository](https://github.com/i-rinat/freshplayerplugin).
 
 It has nothing special, this script it's just A HELL REALLY BASIC ALMOST BEGINNERS LEVEL, but finally do his thing.
 
@@ -47,3 +47,4 @@ On Debian the package <code>libgtk+2.0-dev</code> is called <code>libgtk2.0-dev<
 
 I-Rinat, your freshplayerplugin is a bless, i'm just one of a thousands fans of your creation. And like i said before: 
 # YOU ARE THE BEST!!!
+
