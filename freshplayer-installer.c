@@ -24,13 +24,17 @@
  */
 
 #include <stdio.h>
+#include <unistd.h>
+#include "dev/freshplayer-installer-seeker.c"
 
 int main(int argc,char* argv[])
 {
 	char install[]="cd ~ && mkdir freshplayerplugin && cd freshplayerplugin && wget https://codeload.github.com/i-rinat/freshplayerplugin/zip/master && unzip master && cd freshplayerplugin-master && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .. && make && cp -f libfreshwrapper-pepperflash.so ~/.mozilla/plugins/libfreshwrapper-pepperflash.so && cp -f libfreshwrapper-pepperflash.so ~/freshplayerplugin/libfreshwrapper-pepperflash.so && cd .. && cd .. && cd .. && rm -R freshplayerplugin/";
 	char uninstall[]="rm -f ~/.mozilla/plugins/libfreshwrapper-pepperflash.so";
 	char install_flash[]="apt-get install flashplugin-nonfree";
-
+	int seeker;
+	seeker=SEEKER();
+	
 	if(argc==1)
 	{
 		printf("\n\t\t\x1b[1;31mfreshplayer-installer argument is missing, try with \"freshplayer install\"\x1b[0;0m\n\n");
@@ -40,8 +44,16 @@ int main(int argc,char* argv[])
 	{
 		if(strcmp("install",argv[1])==0)
 		{
-			system(install);
-			return 0;
+			if(seeker==0)
+			{
+				printf("\n\n\tAn error has ocurred, please report it to:\n\thttps://github.com/MALLER-LAGOON/Freshplayer-installer/issues\n\twith the details of the error. i'll be really greatful if u do it :)\n\n");
+				return 0;
+			}
+			else if(seeker==1)
+			{
+				system(install);
+				return 0;
+			}
 		}
 		else if(strcmp("uninstall",argv[1])==0)
 		{
@@ -60,4 +72,5 @@ int main(int argc,char* argv[])
 			return 0;
 		}
 	}
+	return 0;
 }
