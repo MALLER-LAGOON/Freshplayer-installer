@@ -29,7 +29,7 @@
 
 int main(int argc,char* argv[])
 {
-	char install[]="cd ~ && mkdir freshplayerplugin && cd freshplayerplugin && wget https://codeload.github.com/i-rinat/freshplayerplugin/zip/master && unzip master && cd freshplayerplugin-master && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .. && make && cp -f libfreshwrapper-pepperflash.so ~/.mozilla/plugins/libfreshwrapper-pepperflash.so && cd .. && cd .. && cd .. && rm -R freshplayerplugin/ && echo Freshplayer was successfully installed";
+	char install[]="cd ~ && mkdir freshplayerplugin && cd freshplayerplugin && wget https://codeload.github.com/i-rinat/freshplayerplugin/zip/master && unzip master && cd freshplayerplugin-master && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .. && make && cp -f libfreshwrapper-pepperflash.so ~/.mozilla/plugins/libfreshwrapper-pepperflash.so && cd .. && cd .. && cd .. && rm -R freshplayerplugin/ && echo && echo Freshplayer was successfully installed && echo";
 	char uninstall[]="rm -f ~/.mozilla/plugins/libfreshwrapper-pepperflash.so";
 	char install_flash[]="apt-get install flashplugin-nonfree";
 	int seeker;
