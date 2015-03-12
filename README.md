@@ -23,7 +23,6 @@ obviously uninstalls the freshplayer on the current user.
 
 ###INSTALLING FRESHPLAYER-INSTALLER:
 
-To the Rookies, the folder Deb-packages have the .deb packages to install the software directly with Gdebi or dpkg according your preference.
 
 
 
