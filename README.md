@@ -20,6 +20,10 @@ it no needs ROOT privileges, and it installs the freshplayerplugin to the curren
 
 obviously uninstalls the freshplayer on the current user.
 
+if u want to try the dev branch of Freshplayer just type:
+
+>$ freshplayer install-dev
+
 
 ###INSTALLING FRESHPLAYER-INSTALLER:
 
