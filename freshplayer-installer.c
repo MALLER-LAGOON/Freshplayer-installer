@@ -65,7 +65,7 @@ int main(int argc,char* argv[])
 			}
 			return 0;
 		}
-		if(strcmp("--commit",argv[1])==0 || strcmp("-c",argv[1])==0)
+		else if(strcmp("--commit",argv[1])==0 || strcmp("-c",argv[1])==0)
 		{
 			if(seeker==0)
 				{
@@ -97,6 +97,10 @@ int main(int argc,char* argv[])
 					return 0;
 				}
 			}
+		}
+		else if(strcmp("--help",argv[1])==0)
+		{
+			COMMIT_DWLD();
 		}
 		else
 		{
