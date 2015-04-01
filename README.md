@@ -20,17 +20,22 @@ it no needs ROOT privileges, and it installs the freshplayerplugin to the curren
 
 obviously uninstalls the freshplayer on the current user.
 
-if u want to try the dev branch of Freshplayer just type:
+If, for several reasons, you want to install any other different commit than the latest update of the master branch of the freshplayer, you can do it by typing:
 
->$ freshplayer install-dev
+>$ freshplayer --commit [commit identifier]
 
+or 
+
+>$ freshplayer -c [commit identifier]
+
+in that way, the freshplayer-installer will seek in the commit tree for the version that u asked, and when find it do his thing.
+
+if you want to know more about how to get the commit identifier, [please read here](https://github.com/MALLER-LAGOON/Freshplayer-installer/doc/commit.md).
 
 ###INSTALLING FRESHPLAYER-INSTALLER:
 
 
-
-
-but, if u want to install it directly from the source code. It's as simple as typing:
+It's as simple as typing:
 
 >$ sudo make all
 
@@ -44,7 +49,7 @@ Sinces it's just a simple Ansi C script, it has no especial compiling needs, but
 
 On Debian the package <code>libgtk+2.0-dev</code> is called <code>libgtk2.0-dev</code>, but usually the apt-get performs the package approval by it self.
 
-<code>THIS IS JUST TO HELP YOU TO MANAGE THE DOWNLOAD AND INSTALL THE LATEST FRESHPLAYER AVAILABLE ON I-RINAT'S GITHUB TO YOUR SYSTEM, FRESHPLAYER-INSTALLER IS NOT AN UPDATE SEEKER.</code>
+<code>THIS IS JUST TO HELP YOU TO MANAGE THE DOWNLOAD, COMPILATION AND INSTALL THE LATEST FRESHPLAYER AVAILABLE ON I-RINAT'S GITHUB TO YOUR SYSTEM, FRESHPLAYER-INSTALLER IS NOT AN UPDATE SEEKER.</code>
 
 ###THANKS TO:
 
