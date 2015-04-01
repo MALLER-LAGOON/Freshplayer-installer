@@ -98,7 +98,7 @@ int main(int argc,char* argv[])
 				}
 			}
 		}
-		else if(strcmp("--help",argv[1])==0)
+		else if(strcmp("--help",argv[1])==0||"-h",argv[1])==0)
 		{
 			COMMIT_DWLD();
 		}
