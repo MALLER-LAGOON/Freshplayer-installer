@@ -30,7 +30,7 @@ or
 
 in that way, the freshplayer-installer will seek in the commit tree for the version that u asked, and when find it do his thing.
 
-if you want to know more about how to get the commit identifier, [please read here](https://github.com/MALLER-LAGOON/Freshplayer-installer/doc/commit.md).
+if you want to know more about how to get the commit identifier, [please read here](https://github.com/MALLER-LAGOON/Freshplayer-installer/blob/master/doc/commit.md).
 
 ###INSTALLING FRESHPLAYER-INSTALLER:
 
