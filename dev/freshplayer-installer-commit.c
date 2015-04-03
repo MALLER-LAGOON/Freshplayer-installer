@@ -1,5 +1,7 @@
+#define FRESHPLAYER_URL_MAXLENGHT 5000
+
 void COMMIT_MSG(void);
-void COMMIT_DWLD(void);
+void COMMIT_DWLD(char *commit);
 
 void COMMIT_MSG(void)
 {
@@ -21,7 +23,72 @@ void COMMIT_MSG(void)
 			"\t\t\x1b[1;33m$ \x1b[1;32mfreshplayer -c \x1b[1;31m[SHA commit identifier]\x1b[0;0m\n\n");
 }
 
-void COMMIT_DWLD(void)
+void COMMIT_DWLD(char *commit)
 {
-	printf("\n\n\t\x1b[1;31mThis part is still work in progress\x1b[0;0m\n\n\n");
+	char COMMIT_url1[]="https://github.com/i-rinat/freshplayerplugin/archive/";
+	char COMMIT_zip[]=".zip";
+
+	char COMMIT_install_chain1[]="echo && echo CREATING TEMPORAL FOLDER... && echo && cd ~ && mkdir freshplayerplugin && cd freshplayerplugin && echo DOWNLOADING SOURCE CODE... && echo && wget ";
+	char COMMIT_install_chain2[]=" && echo UNCOMPRESSING SOURCE FILES... && echo && unzip ";
+	char COMMIT_install_chain3[]=" && cd freshplayerplugin-";
+	char COMMIT_install_chain4[]=" && mkdir build && cd build && echo && echo VERIFYING DEPENDENCIES AND CREATING MAKEFILE... && echo && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DHAVE_PULSEAUDIO=1 .. && echo && echo CREATING FRESHPLAYER PLUGIN... && echo && make && echo && echo INSTALLING FRESHPLAYER PLUGIN... && echo && cp -f libfreshwrapper-pepperflash.so ~/.mozilla/plugins/libfreshwrapper-pepperflash.so && echo && echo REMOVING TEMPORAL FILES... && echo && cd .. && cd .. && cd .. && rm -R freshplayerplugin/ && echo && echo FRESHPLAYER HAS BEEN SUCCESSFULLY INSTALLED &&echo";
+
+	char COMMIT_zip_file[FRESHPLAYER_URL_MAXLENGHT];
+	char COMMIT_url[FRESHPLAYER_URL_MAXLENGHT];
+	char COMMIT_install[FRESHPLAYER_URL_MAXLENGHT];
+
+	int loopy=53;
+	int commit_lenght=40;
+	int counter, COMMIT_int;
+
+	counter=loopy+strlen(commit);
+
+	strcpy(COMMIT_url,COMMIT_url1);
+
+	strcpy(COMMIT_zip_file, commit);
+
+	for(COMMIT_int=0;COMMIT_int<=commit_lenght;COMMIT_int++)
+	{
+		strcpy(&COMMIT_zip_file[40+COMMIT_int],&COMMIT_zip[COMMIT_int]);
+	}
+
+	for(COMMIT_int=0;loopy<=counter-1;loopy++, COMMIT_int++)
+	{
+		strcpy(&COMMIT_url[loopy],&COMMIT_zip_file[COMMIT_int]);
+	}
+
+	strcpy(COMMIT_install,COMMIT_install_chain1);
+
+	for(COMMIT_int=0;COMMIT_int<=strlen(COMMIT_url);COMMIT_int++)
+	{
+		strcpy(&COMMIT_install[159+COMMIT_int], &COMMIT_url[COMMIT_int]);
+	}
+
+	for(COMMIT_int=0;COMMIT_int<=56;COMMIT_int++)
+	{
+		strcpy(&COMMIT_install[256+COMMIT_int], &COMMIT_install_chain2[COMMIT_int]);
+	}
+
+	for(COMMIT_int=0;COMMIT_int<=44;COMMIT_int++)
+	{
+		strcpy(&COMMIT_install[312+COMMIT_int], &COMMIT_zip_file[COMMIT_int]);/**/
+	}
+	
+
+	for(COMMIT_int=0;COMMIT_int<=25;COMMIT_int++)
+	{
+		strcpy(&COMMIT_install[356+COMMIT_int], &COMMIT_install_chain3[COMMIT_int]);
+	}
+
+	for(COMMIT_int=0;COMMIT_int<=40;COMMIT_int++)
+	{
+		strcpy(&COMMIT_install[381+COMMIT_int], &commit[COMMIT_int]);
+	}
+
+	for(COMMIT_int=0;COMMIT_int<=969;COMMIT_int++)
+	{
+		strcpy(&COMMIT_install[421+COMMIT_int], &COMMIT_install_chain4[COMMIT_int]);
+	}
+
+	system(COMMIT_install);
 }

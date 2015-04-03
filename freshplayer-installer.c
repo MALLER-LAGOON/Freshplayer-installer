@@ -28,11 +28,11 @@
 
 int main(int argc,char* argv[])
 {
-	char install[]=" echo && echo CREATING TEMPORAL FOLDER... && echo && cd ~ && mkdir freshplayerplugin && cd freshplayerplugin && echo DOWNLOADING SOURCE CODE... && echo && wget https://github.com/i-rinat/freshplayerplugin/archive/master.zip && echo UNCOMPRESSING SOURCE FILES... && echo && unzip master.zip && cd freshplayerplugin-master && mkdir build && cd build && echo && echo VERIFYING DEPENDENCIES AND CREATING MAKEFILE... && echo && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DHAVE_PULSEAUDIO=1 .. && echo && echo CREATING FRESHPLAYER PLUGIN... && echo && make && echo && echo INSTALLING FRESHPLAYER PLUGIN... && echo && cp -f libfreshwrapper-pepperflash.so ~/.mozilla/plugins/libfreshwrapper-pepperflash.so && echo && echo REMOVING TEMPORAL FILES... && echo && cd .. && cd .. && cd .. && rm -R freshplayerplugin/ && echo && echo FRESHPLAYER HAS BEEN SUCCESSFULLY INSTALLED &&echo";
+	char install[]="echo && echo CREATING TEMPORAL FOLDER... && echo && cd ~ && mkdir freshplayerplugin && cd freshplayerplugin && echo DOWNLOADING SOURCE CODE... && echo && wget https://github.com/i-rinat/freshplayerplugin/archive/master.zip && echo UNCOMPRESSING SOURCE FILES... && echo && unzip master.zip && cd freshplayerplugin-master && mkdir build && cd build && echo && echo VERIFYING DEPENDENCIES AND CREATING MAKEFILE... && echo && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DHAVE_PULSEAUDIO=1 .. && echo && echo CREATING FRESHPLAYER PLUGIN... && echo && make && echo && echo INSTALLING FRESHPLAYER PLUGIN... && echo && cp -f libfreshwrapper-pepperflash.so ~/.mozilla/plugins/libfreshwrapper-pepperflash.so && echo && echo REMOVING TEMPORAL FILES... && echo && cd .. && cd .. && cd .. && rm -R freshplayerplugin/ && echo && echo FRESHPLAYER HAS BEEN SUCCESSFULLY INSTALLED &&echo";
 	char uninstall[]="rm -f ~/.mozilla/plugins/libfreshwrapper-pepperflash.so";
 	char install_flash[]="apt-get install flashplugin-nonfree";
+	//char dtrace[]="-DTRACE_ALL=1";
 	int seeker;
-	seeker=SEEKER();
 	
 	if(argc==1)
 	{
@@ -43,6 +43,7 @@ int main(int argc,char* argv[])
 	{
 		if(strcmp("install",argv[1])==0)
 		{
+			seeker=SEEKER();
 			if(seeker==0)
 			{
 				printf("\n\n\t\x1b[1;33mAn error has ocurred, please report it to:\n\thttps://github.com/MALLER-LAGOON/Freshplayer-installer/issues\n\twith the details of the error. i'll be really greatful if u do it :)\x1b[0;0m\n\n");
@@ -67,6 +68,7 @@ int main(int argc,char* argv[])
 		}
 		else if(strcmp("--commit",argv[1])==0 || strcmp("-c",argv[1])==0)
 		{
+			seeker=SEEKER();
 			if(seeker==0)
 				{
 					printf("\n\n\t\x1b[1;33mAn error has ocurred, please report it to:\n\thttps://github.com/MALLER-LAGOON/Freshplayer-installer/issues\n\twith the details of the error. i'll be really greatful if u do it :)\x1b[0;0m\n\n");
@@ -92,15 +94,15 @@ int main(int argc,char* argv[])
 					// - verificar la existencia del enlace al commit o indicar el respectivo error
 					// - si el enlace es valido, descargar, compilar e instalar el commit
 					// y realizar las comprobaciones necesarias (bendito sea WGET)
-					COMMIT_DWLD();
+					COMMIT_DWLD(argv[2]);
 					//system(install_commit); /*esta llamada es necesariamente referencial*/
 					return 0;
 				}
 			}
 		}
-		else if(strcmp("--help",argv[1])==0||"-h",argv[1])==0)
+		else if(strcmp("--help",argv[1])==0||strcmp("-h",argv[1])==0)
 		{
-			COMMIT_DWLD();
+			COMMIT_MSG();
 		}
 		else
 		{
