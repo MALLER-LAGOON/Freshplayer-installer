@@ -25,13 +25,10 @@
 #include <unistd.h>
 #include "dev/freshplayer-installer-seeker.c"
 #include "dev/freshplayer-installer-commit.c"
+#include "dev/freshplayer-installer-options.c"
 
 int main(int argc,char* argv[])
 {
-	char install[]="echo && echo CREATING TEMPORAL FOLDER... && echo && cd ~ && mkdir freshplayerplugin && cd freshplayerplugin && echo DOWNLOADING SOURCE CODE... && echo && wget https://github.com/i-rinat/freshplayerplugin/archive/master.zip && echo UNCOMPRESSING SOURCE FILES... && echo && unzip master.zip && cd freshplayerplugin-master && mkdir build && cd build && echo && echo VERIFYING DEPENDENCIES AND CREATING MAKEFILE... && echo && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DHAVE_PULSEAUDIO=1 .. && echo && echo CREATING FRESHPLAYER PLUGIN... && echo && make && echo && echo INSTALLING FRESHPLAYER PLUGIN... && echo && cp -f libfreshwrapper-pepperflash.so ~/.mozilla/plugins/libfreshwrapper-pepperflash.so && echo && echo REMOVING TEMPORAL FILES... && echo && cd .. && cd .. && cd .. && rm -R freshplayerplugin/ && echo && echo FRESHPLAYER HAS BEEN SUCCESSFULLY INSTALLED &&echo";
-	char uninstall[]="rm -f ~/.mozilla/plugins/libfreshwrapper-pepperflash.so";
-	char install_flash[]="apt-get install flashplugin-nonfree";
-	//char dtrace[]="-DTRACE_ALL=1";
 	int seeker;
 	
 	if(argc==1)
@@ -41,7 +38,7 @@ int main(int argc,char* argv[])
 	}
 	else
 	{
-		if(strcmp("install",argv[1])==0)
+		if(argc==2 && strcmp("install",argv[1])==0)
 		{
 			seeker=SEEKER();
 			if(seeker==0)
@@ -51,17 +48,31 @@ int main(int argc,char* argv[])
 			}
 			else if(seeker==1)
 			{
-				system(install);
+				INSTALL();
+				return 0;
+			}
+		}
+		else if(argc==2 && strcmp("install-gtk3",argv[1])==0)
+		{
+			seeker=SEEKER();
+			if(seeker==0)
+			{
+				printf("\n\n\t\x1b[1;33mAn error has ocurred, please report it to:\n\thttps://github.com/MALLER-LAGOON/Freshplayer-installer/issues\n\twith the details of the error. i'll be really greatful if u do it :)\x1b[0;0m\n\n");
+				return 0;
+			}
+			else if(seeker==1)
+			{
+				INSTALL_GTK3();
 				return 0;
 			}
 		}
 		else if(strcmp("uninstall",argv[1])==0)
 		{
-			system(uninstall);
+			UNINSTALL();
 			printf("\n\n\t\t\x1b[1;32mFreshplayerplugin was successfully removed\x1b[0;0m\n\n");
 			if(getuid()!=0)
 			{
-				system(install_flash);
+				INSTALL_FLASH();
 				return 0;
 			}
 			return 0;
@@ -76,13 +87,6 @@ int main(int argc,char* argv[])
 				}
 			else if(seeker==1)
 			{
-				// aqui es necesario definir una funcion que genere el enlace de descarga del commit
-				// y tambien es necesario que tome el commit para poder hacer la descompresion de la carpeta
-				// y posterior compilacion e instalacion
-				// por lo tanto debe hacer:
-				// - verificar longitud de la cadena del commit, la cual debe ser necesariamente mas grande que 8 caracteres
-				//   de lo contrario, mostrar un mensaje que indique como obtener la verdadera cadena del commit.
-
 				if(strlen(argv[2])<40)
 				{
 					printf( "\n\n\tthe entered commit \x1b[1;33m%s\x1b[0;0m, is not valid.\n\n",argv[2]);
@@ -90,19 +94,23 @@ int main(int argc,char* argv[])
 				}
 				else
 				{
-					// aqui se debe llamar una funcion que permita colocar la cadena de commit en el lugar adecuado
+					// FALTA AUN:
 					// - verificar la existencia del enlace al commit o indicar el respectivo error
-					// - si el enlace es valido, descargar, compilar e instalar el commit
 					// y realizar las comprobaciones necesarias (bendito sea WGET)
 					COMMIT_DWLD(argv[2]);
-					//system(install_commit); /*esta llamada es necesariamente referencial*/
 					return 0;
 				}
 			}
 		}
 		else if(strcmp("--help",argv[1])==0||strcmp("-h",argv[1])==0)
 		{
+			// FALTA:
+			// realizar un menu de ayuda decente, en donde se presenten los argumentos para el comando freshplayer
 			COMMIT_MSG();
+		}
+		else if(argc>2)
+		{
+			printf( "\n\n\tel ingreso de parametros multiples aun se encuentran en desarrollo, pero aun estoy trabajando en el :).\n\n");
 		}
 		else
 		{
