@@ -45,7 +45,7 @@ And the make will compile and install the Freshplayer-installer
 
 Sinces it's just a simple Ansi C script, it has no especial compiling needs, but to work it needs wget and unzip installed, which usually are installed by default, and it has obviously needs the same dependencies that freshplayerplugin to compile the freshplayerplugin, because magic doesn't really exist (yeah, face that truth!!!):
 
-> $ sudo apt-get install wget unzip cmake pkg-config ragel libasound2-dev libssl-dev libglib2.0-dev libconfig-dev libpango1.0-dev libgl1-mesa-dev libevent-dev libgtk+2.0-dev libgles2-mesa-dev libxrandr-dev g++ libpulse-dev libxrender-dev libxcursor-dev libv4l-dev libgles2-mesa-dev
+> $ sudo apt-get install wget unzip cmake pkg-config ragel libasound2-dev libssl-dev libglib2.0-dev libconfig-dev libpango1.0-dev libgl1-mesa-dev libevent-dev libgtk2.0-dev libgtk-3-dev libgles2-mesa-dev libxrandr-dev g++ libpulse-dev libxrender-dev libxcursor-dev libv4l-dev libgles2-mesa-dev
 
 On Debian the package <code>libgtk+2.0-dev</code> is called <code>libgtk2.0-dev</code>, but usually the apt-get performs the package approval by it self.
 
