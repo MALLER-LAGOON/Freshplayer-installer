@@ -46,11 +46,25 @@ there is also some parameters that allows to compile the freshplayerplugin with 
 
 -<code>hwdec</code> = activates the hardware aceleration.
 
+-<code>-commit</code> = looks for a particular commit in the repositorio, and installs it.
+
 all this parameters has to be used between "freshplayer" and "install"
 
 >$freshplayer -gtk3 -debug -angle install
 
 for compatibility reasons, there are some parameters that can not be allow to load together.
+
+in the case of the commit install:
+
+>$freshplayer --commit [SHA commit identifier] install
+
+or
+
+>$freshplayer -c [SHA commit identifier] install
+
+it's necessary to put the [SHA commit identifier] inmediately after the -c/--commit, otherwise freshplayer-installer will not recognise the parameter and will finish the process.
+
+if you want to know more about how to get the commit identifier, [please read here](https://github.com/MALLER-LAGOON/Freshplayer-installer/blob/master/doc/commit.md).
 
 ###INSTALLING FRESHPLAYER-INSTALLER:
 
