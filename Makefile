@@ -25,5 +25,3 @@ all: freshplayer-installer.c
 	@echo ➼ freshplayer-installer successfully installed
 	rm -R freshplayer
 	@echo ➼ freshplayer-installer cleaned
-
-
