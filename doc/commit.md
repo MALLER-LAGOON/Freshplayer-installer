@@ -21,4 +21,4 @@ Once in there, you have three choices to get the Freshplayer Commit Identifier:
 
 
 Once you have the commit identifier, you can back to the console and do a:
->$ freshplayer -c [SHA commit identifier]
+>$ freshplayer -c [SHA commit identifier] install
