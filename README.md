@@ -36,9 +36,9 @@ there is also some parameters that allows to compile the freshplayerplugin with 
 
 -<code>gtk3</code> = activate gtk3 libraries for compilation instead the gtk2. (recomended for compatibility in new environments)
 
--<code>debug</code> = compile the freshplayerplugin in debug mode.(WARNING: with this plugin mode, is recommended to open firefox with a file saving mode: <code>$firefox &#35; ~/Desktop/freshtrace.file<code>, because the debug info could easily get &#35;&#35;100M)
+-<code>debug</code> = compile the freshplayerplugin in debug mode.(WARNING: with this plugin mode, is recommended to open firefox with a file saving mode: <code>$firefox &#62; ~/Desktop/freshtrace.file</code>, because the debug info could easily get &#62;&#62;100M)
 
--<code>trace</code> = compile the freshplayerplugin in trace mode (WARNING: with this plugin mode, is recommended to open firefox with a file saving mode: <code>$firefox &#35; ~/Desktop/freshtrace.file<code>, because the trace easily can get &#35;&#35;100M)
+-<code>trace</code> = compile the freshplayerplugin in trace mode (WARNING: with this plugin mode, is recommended to open firefox with a file saving mode: <code>$firefox &#62; ~/Desktop/freshtrace.file</code>, because the trace easily can get &#62;&#62;100M)
 
 -<code>angle/gles2/gles/gl</code> = any of this options activates the OpenGL rendering using the ANGLE libraries (not recommended unless necessary, the target freshplayerplugin will be very heavy ~19M, and the performance will be very low, turning the browser very laggy)
 
