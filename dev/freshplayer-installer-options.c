@@ -234,7 +234,7 @@ void SPECIAL_COMMIT_INSTALL(int gtk3, int trace, int debug, int angle, int hwdec
 		strcpy(&COMMIT_install[421+COMMIT_int], &COMMIT_install_chain4[COMMIT_int]);
 	}
 
-	strcpy(INSTALL_LINE, COMMIT_install);
+	strcpy(INSTALL_LINE, COMMIT_install); /*yeah, i did this. SO WHAT!!!*/
 
 	switch(debug)
 	{
@@ -329,5 +329,5 @@ void COMMIT_MSG(void)
 			"\t  top left of the page, under the button that says \"browse files\", and there you have the commit identifier\n"
 			"\t  in all its magnificence.\n\n"
 			"Once you have the commit identifier, you can back here to the console and do a:\n\n"
-			"\t\t\x1b[1;33m$ \x1b[1;32mfreshplayer -c \x1b[1;31m[SHA commit identifier]\x1b[0;0m\n\n");
+			"\t\t\x1b[1;33m$ \x1b[1;32mfreshplayer -c \x1b[1;31m[SHA commit identifier]\x1b[0;0m install\n\n");
 }

@@ -35,10 +35,15 @@ if you want to know more about how to get the commit identifier, [please read he
 there is also some parameters that allows to compile the freshplayerplugin with some custom features:
 
 -<code>gtk3</code> = activate gtk3 libraries for compilation instead the gtk2. (recomended for compatibility in new environments)
--<code>debug</code> = compile the freshplayerplugin in debug mode.(WARNING: with this plugin mode, is recommended to open firefox with a file saving mode: <code>$firefox > ~/Desktop/freshtrace.file<code>, because the debug info could easily get >>100M)
--<code>trace</code> = compile the freshplayerplugin in trace mode (WARNING: with this plugin mode, is recommended to open firefox with a file saving mode: <code>$firefox > ~/Desktop/freshtrace.file<code>, because the trace easily can get >>100M)
+
+-<code>debug</code> = compile the freshplayerplugin in debug mode.(WARNING: with this plugin mode, is recommended to open firefox with a file saving mode: <code>$firefox &#35; ~/Desktop/freshtrace.file<code>, because the debug info could easily get >>100M)
+
+-<code>trace</code> = compile the freshplayerplugin in trace mode (WARNING: with this plugin mode, is recommended to open firefox with a file saving mode: <code>$firefox &#35; ~/Desktop/freshtrace.file<code>, because the trace easily can get >>100M)
+
 -<code>angle/gles2/gles/gl</code> = any of this options activates the OpenGL rendering using the ANGLE libraries (not recommended unless necessary, the target freshplayerplugin will be very heavy ~19M, and the performance will be very low, turning the browser very laggy)
+
 -<code>pulse</code> = this option activates the pulseaudio.
+
 -<code>hwdec</code> = activates the hardware aceleration.
 
 all this parameters has to be used between "freshplayer" and "install"
