@@ -44,9 +44,9 @@ there is also some parameters that allows to compile the freshplayerplugin with 
 
 -<code>pulse</code> = this option activates the pulseaudio.
 
--<code>hwdec</code> = activates the hardware aceleration.
+-<code>hwdec</code> = activates the hardware aceleration. (even if you apply this option, it is necessary to add <code>enable_hwdec=1</code> in the <code>~/.config/freshwrapper.conf</code> file)
 
--<code>-commit</code> = looks for a particular commit in the repositorio, and installs it.
+-<code>-commit/c</code> = any of this options looks for a particular commit in the repository, and installs it.
 
 all this parameters has to be used between "freshplayer" and "install"
 
