@@ -52,7 +52,7 @@ all this parameters has to be used between "freshplayer" and "install"
 
 >$freshplayer -gtk3 -debug -angle install
 
-for compatibility reasons, there are some parameters that can not be allow to load together.
+
 
 in the case of the commit install:
 
