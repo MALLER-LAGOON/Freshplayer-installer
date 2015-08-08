@@ -180,7 +180,7 @@ void SPECIAL_COMMIT_INSTALL(int gtk3, int trace, int debug, int angle, int hwdec
 	/******************************************************************/
 	char INSTALL_argument_GTK3[]="-DWITH_GTK=3 ";
 	char INSTALL_argument_TRACE[]="-DTRACE_ALL=1 ";
-	char INSTALL_argument_ANGLE[]="-DWITH_GLES2=1 ";
+	char INSTALL_argument_ANGLE[]="-DWITH_GLES2=0 ";
 	char INSTALL_argument_HWDEC[]="-DWITH_HWDEC=1 ";
 	char INSTALL_argument_PULSE[]="-DHAVE_PULSEAUDIO=1 ";
 	char INSTALL_LINE[1030];
